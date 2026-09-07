@@ -85,6 +85,41 @@
         .tick-line::before{ left:0; }
         .tick-line::after{ right:0; }
 
+        .vehicle-gallery{
+            display:grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.1rem;
+            margin-top: 2.2rem;
+            max-width: 22rem;
+        }
+        .vehicle-card{
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            border: 1px solid rgba(228,197,131,0.32);
+            background: rgba(12,20,32,0.45);
+            box-shadow: 0 22px 42px rgba(10,12,18,0.18);
+            min-height: 150px;
+        }
+        .vehicle-card img{
+            display:block;
+            width:100%;
+            height: 150px;
+            object-fit: cover;
+            filter: saturate(1.2) contrast(1.08) brightness(0.95);
+        }
+        .vehicle-label{
+            position:absolute;
+            inset:auto 0 0 0;
+            padding: 0.7rem 0.8rem 0.8rem;
+            background: linear-gradient(to top, rgba(10,14,22,0.82), rgba(10,14,22,0.14));
+            color: #F5F2EA;
+            font-size: 0.74rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
         @media (prefers-reduced-motion: reduce){
             *{ transition: none !important; }
         }
@@ -127,6 +162,25 @@
                 <path d="M128 52L118 52M128 52L128 62" stroke="#C8963E" stroke-width="1.6" stroke-linecap="round"/>
                 <path d="M60 122L60 112M60 122L70 122" stroke="#5B6E8F" stroke-width="1.6" stroke-linecap="round"/>
             </svg>
+
+            <div class="vehicle-gallery" aria-label="Galeri kendaraan">
+                <figure class="vehicle-card">
+                    <img src="https://images.unsplash.com/photo-1558980664-10e7170b5df9?auto=format&fit=crop&w=1100&q=80" alt="Sepeda motor" loading="lazy">
+                    <figcaption class="vehicle-label">Motor</figcaption>
+                </figure>
+                <figure class="vehicle-card">
+                    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1100&q=80" alt="Mobil mewah" loading="lazy">
+                    <figcaption class="vehicle-label">Mobil Mewah</figcaption>
+                </figure>
+                <figure class="vehicle-card">
+                    <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1100&q=80" alt="Motor sport" loading="lazy">
+                    <figcaption class="vehicle-label">Sport</figcaption>
+                </figure>
+                <figure class="vehicle-card">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1100&q=80" alt="Mobil premium" loading="lazy">
+                    <figcaption class="vehicle-label">Premium</figcaption>
+                </figure>
+            </div>
         </div>
 
         <div class="text-[13px] text-[#8FA0BE] leading-relaxed">
@@ -144,7 +198,7 @@
             <form class="space-y-7" onsubmit="return false;">
 
                 <div>
-                    <label for="identitas" class="block text-[13.5px] text-[var(--muted)] mb-1.5">Email atau NIP</label>
+                    <label for="identitas" class="block text-[13.5px] text-[var(--muted)] mb-1.5">Email</label>
                     <input id="identitas" type="text" class="field-input" placeholder="nama@smkbabussalam.sch.id" autocomplete="username">
                 </div>
 
